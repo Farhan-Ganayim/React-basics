@@ -1,5 +1,6 @@
 import { UserPreview } from '../cmps/UserPreview.jsx'
 import { AnimalsList } from '../cmps/Animals.jsx'
+import { SeasonClock } from '../cmps/SeasonClock.jsx'
 
 export function Home() {
     const animalInfos = [
@@ -13,7 +14,7 @@ export function Home() {
             <h2>Home Sweet Home</h2>
             <UserPreview />
             <AnimalsList animalInfos={animalInfos}/>
-            
+            <SeasonClock/>
         </section>
     )
 }

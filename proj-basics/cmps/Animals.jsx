@@ -1,15 +1,15 @@
-// import {utilService} from '../services.util.service.js'
+import { utilService } from '../services/util.service.js'
 
-export function AnimalsList(props) {
-    // export function AnimalsList({animalInfos}) {
+// export function AnimalsList(props) {
+export function AnimalsList({ animalInfos }) {
     // const { animalInfos } = props
-    const animalInfos = props.animalInfos
+    // const animalInfos = props.animalInfos
     return (
         <section className="animals-container">
             <h2>Rare Animals</h2>
             <table className="animals-list">
                 <tbody>
-                    {animalInfos.map((animal,idx) => (
+                    {animalInfos.map((animal, idx) => (
                         // <tr key={utilService.makeId()}>
                         <tr key={idx}>
                             <td>{animal.type}</td>
@@ -24,8 +24,8 @@ export function AnimalsList(props) {
                     }
 
                 </tbody>
-
             </table>
         </section>
+
     )
 }
