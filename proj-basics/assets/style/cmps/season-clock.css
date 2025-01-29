@@ -3,9 +3,14 @@
     place-self: center;
     background-color: rgb(42, 42, 172);
     color:#f0e5e5;
-    
+    padding: 2em;
 }
 .clock-container h2,h3{
     font-family: 'Times New Roman';
-
+    place-self: center;
+    
+}
+img{
+    display: flex;
+    place-self: center;
 }
