@@ -1,14 +1,26 @@
-
-.animals-container{
-    padding: 2em;
-    background: aqua;
-}
-.animals-container h2{
-    color: aqua;
+.animals-container {
+    background: rgb(143, 60, 60);
+    color: #f0e5e5;
+    width: 70%;
+    margin: 2em auto;
 }
 
+.animals-container h2 {
+    font-family: 'Times New Roman', Times, serif;
+    padding: 1em .3em;
+}
 
+.animals-list {
+    width: 100%;
+    border-collapse: collapse;
+}
 
-.animals-list{
-
+.animals-list td {
+    padding: .5em;
+    border: 1px solid black;
+    font-size: 1.3em;
+}
+.animals-list a{
+    color: blue;
+    text-decoration: underline;
 }
