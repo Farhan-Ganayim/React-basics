@@ -1,16 +1,16 @@
 .clock-container {
-    
     place-self: center;
-    background-color: rgb(42, 42, 172);
-    color:#f0e5e5;
     padding: 2em;
+    color: #f0e5e5;
+    background-color: rgb(46, 210, 216);
+    justify-items: center;
+
+    h2,
+    h3 {
+        font-family: 'Times New Roman';
+    }
 }
-.clock-container h2,h3{
-    font-family: 'Times New Roman';
-    place-self: center;
-    
-}
-img{
-    display: flex;
-    place-self: center;
+
+.clock-container.dark {
+    background-color: rgb(42, 42, 172);
 }
