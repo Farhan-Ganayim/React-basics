@@ -1,45 +1,36 @@
 const { useState, useEffect } = React
+import { utilService } from "../services/util.service.js"
 
-export function SeasonClock(props) {
+export function SeasonClock() {
 
-    const nowTime = new Date()
-    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+    const date = new Date()
 
-    const dayName = days[nowTime.getDay()]
-    const monthIdx = nowTime.getMonth()
-    const monthName = months[monthIdx]
+    const dayName = utilService.getDayName(date)
+    const monthIdx = date.getMonth()
+    const monthName = utilService.getMonthName(date)
+
     const [isDark, setIsDark] = useState(true)
     const darkClass = isDark ? 'dark' : ''
-    let season = null
+    let season = 'Winter'
 
-    if (monthIdx >= 2 && monthIdx <= 4) season = 'Spring'
-    else if (monthIdx >= 5 && monthIdx <= 7) season = 'Summer'
-    else if (monthIdx >= 8 && monthIdx <= 10) Season = 'Fall'
-    else season = 'Winter'
-
-    const seasonLower = season.toLowerCase()
-    let seasonImg = ''
-    switch (seasonLower) {
-        case 'winter':
-            seasonImg = '/season-imgs/winter.png'
-            break
-        case 'spring':
-            seasonImg = '/season-imgs/spring.png'
-            break
-        case 'summer':
-            seasonImg = '/season-imgs/summer.png'
-            break
-        case 'fall':
-            seasonImg = '/season-imgs/autumn.png'
-            break
-        default:
-            seasonImg = '/season-imgs/winter.png'
+    let seasonImg = '/season-imgs/winter.png'
+    if (monthIdx >= 2 && monthIdx <= 4) {
+        season = 'Spring'
+        seasonImg = '/season-imgs/spring.png'
+    }
+    else if (monthIdx >= 5 && monthIdx <= 7) {
+        season = 'Summer'
+        seasonImg = '/season-imgs/summer.png'
+    }
+    else if (monthIdx >= 8 && monthIdx <= 10) {
+        season = 'Fall'
+        seasonImg = '/season-imgs/autumn.png'
     }
 
     const [clock, setClock] = useState(new Date())
     useEffect(() => {
         let clockId = setInterval(() => setClock(new Date()), 1000)
+
         return () => {
             clearInterval(clockId)
         }
